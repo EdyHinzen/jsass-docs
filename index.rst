@@ -10,6 +10,9 @@ Welcome to jsass's documentation!
 .. image:: https://img.shields.io/gratipay/bit3.svg?style=flat-square
    :alt: Gratipay
    :target: https://gratipay.com/bit3/
+.. image:: https://readthedocs.org/projects/jsass/badge/?version=latest
+   :alt: Documentation Status
+   :target: https://readthedocs.org/projects/jsass/?badge=latest
 
 jsass is a Java sass compiler using libsass.
 
