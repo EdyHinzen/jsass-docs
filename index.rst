@@ -27,3 +27,13 @@ Contents:
    options
    functions
    importers
+
+License
+-------
+
+MIT-License
+
+Attribution
+-----------
+
+This project originally based on `warmuuh/libsass-maven-plugin <https://github.com/warmuuh/libsass-maven-plugin>`_.
