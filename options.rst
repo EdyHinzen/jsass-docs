@@ -4,59 +4,40 @@ Options
 The options class allow to customize each compilation process. Most options are equals to the well known command line
 options from sass compilers.
 
-Precision
+Function providers
+------------------
+
+.. code-block:: java
+
+    options.getFunctionProviders().add(new MyFunctions());
+
+Headers
+-------
+
+.. code-block:: java
+
+    options.getHeaderImporters().add(new MyHeaderImporter());
+
+Importers
 ---------
 
-Precision for outputting fractional numbers.
+.. code-block:: java
+
+    options.getImporters().add(new MyImporter());
+
+Include paths
+-------------
 
 .. code-block:: java
 
-    options.setPrecision(6);
+    options.getIncludePaths().add(new File("bower_components/foundation/scss");
 
-Output style
-------------
-
-Output style for the generated css code.
+Indention
+---------
 
 .. code-block:: java
 
-    options.setOutputStyle(de.bit3.jsass.OutputStyle.NESTED);
-
-Inline source comments
-----------------------
-
-If you want inline source comments.
-
-.. code-block:: java
-
-    options.setSourceComments(true);
-
-Embedded source map
--------------------
-
-Embed sourceMappingUrl as data uri.
-
-.. code-block:: java
-
-    options.setSourceMapEmbed(true);
-
-Embed contents in source map
-----------------------------
-
-Embed include contents in maps.
-
-.. code-block:: java
-
-    options.setSourceMapContents(true);
-
-Omit source map url
--------------------
-
-Disable sourceMappingUrl in css output
-
-.. code-block:: java
-
-    options.setOmitSourceMapUrl(true);
+    options.setIndent("\t");
 
 SASS syntax
 -----------
@@ -67,21 +48,66 @@ Treat source_string as sass (as opposed to scss).
 
     options.setIsIndentedSyntaxSrc(true);
 
-Image url
+Linefeed
+--------
+
+.. code-block:: java
+
+    options.setLinefeed("\r\n");
+
+Omit source map url
+-------------------
+
+Disable sourceMappingUrl in css output.
+
+.. code-block:: java
+
+    options.setOmitSourceMapUrl(true);
+
+Output style
+------------
+
+Output style for the generated css code.
+
+.. code-block:: java
+
+    options.setOutputStyle(io.bit3.jsass.OutputStyle.NESTED);
+
+Precision
 ---------
 
-For the image-url Sass function.
+Precision for outputting fractional numbers.
 
 .. code-block:: java
 
-    options.setImageUrl("img/");
+    options.setPrecision(6);
 
-Include paths
--------------
+Inline source comments
+----------------------
+
+If you want inline source comments.
 
 .. code-block:: java
 
-    options.getIncludePaths().add(new File("bower_components/foundation/scss");
+    options.setSourceComments(true);
+
+Embed contents in source map
+----------------------------
+
+Embed include contents in maps.
+
+.. code-block:: java
+
+    options.setSourceMapContents(true);
+
+Embedded source map
+-------------------
+
+Embed sourceMappingUrl as data uri.
+
+.. code-block:: java
+
+    options.setSourceMapEmbed(true);
 
 Source map
 ----------
@@ -91,21 +117,3 @@ Path to source map file. Enables the source map generating. Used to create sourc
 .. code-block:: java
 
     options.setSourceMapFile(new File("stylesheet.css.map");
-
-Function providers
-------------------
-
-Register custom function providers.
-
-.. code-block:: java
-
-    options.getFunctionProviders().add(new MyFunctions());
-
-Importers
----------
-
-Register custom importers.
-
-.. code-block:: java
-
-    options.getImporters().add(new MyImporter());

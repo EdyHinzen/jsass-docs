@@ -14,9 +14,7 @@ Welcome to jsass's documentation!
    :alt: Documentation Status
    :target: https://readthedocs.org/projects/jsass/?badge=latest
 
-jsass is a Java sass compiler using libsass.
-
-The final goal of jsass is to provide a Java like API around the C like libsass API.
+jsass is a Java sass compiler using `libsass <http://libsass.org/>`_.
 
 Contents:
 
@@ -27,13 +25,5 @@ Contents:
    options
    functions
    importers
-
-License
--------
-
-MIT-License
-
-Attribution
------------
-
-This project originally based on `warmuuh/libsass-maven-plugin <https://github.com/warmuuh/libsass-maven-plugin>`_.
+   license
+   internals

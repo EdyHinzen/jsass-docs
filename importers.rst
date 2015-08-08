@@ -8,36 +8,11 @@ They allow to manipulate the way how `@import` works.
 
     The import source string must be in SCSS syntax. SASS syntax is not supported yet!
 
-In jsass importers must implement the `de.bit3.jsass.importer.Importer` interface.
+In jsass importers must implement the `io.bit3.jsass.importer.Importer` interface.
 
-.. code-block:: java
+.. literalinclude:: examples/MyImporter.java
+   :language: java
    :linenos:
-
-    import de.bit3.jsass.context.Context;
-    import de.bit3.jsass.importer.Import;
-    import de.bit3.jsass.importer.Importer;
-
-    import java.io.File;
-    import java.net.URI;
-    import java.net.URISyntaxException;
-    import java.util.Arrays;
-    import java.util.Collection;
-
-    public class MyImporter implements Importer {
-        @Override
-        public Collection<Import> apply(String url, String previous, Context originalContext) {
-            try {
-                return Arrays.asList(
-                        new Import(
-                                new URI("import.scss"),
-                                new File("public/assets").toURI()
-                        )
-                );
-            } catch (URISyntaxException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
 
 Then register the object instance to the options.
 
@@ -57,7 +32,7 @@ If you importer should be skipped, just return `null`.
 
     public class MyImporter implements Importer {
         @Override
-        public Collection<Import> apply(String url, String previous, Context originalContext) {
+        public Collection<Import> apply(String url, Import previous) {
             // ...
 
             if (someReasonToSkipThisImporter) {
@@ -78,7 +53,7 @@ Sometimes you may want to omit an `@import` directive. In this case, return an e
 
     public class MyImporter implements Importer {
         @Override
-        public Collection<Import> apply(String url, String previous, Context originalContext) {
+        public Collection<Import> apply(String url, Import previous) {
             // ...
 
             if (someReasonToSkipThisImportRule) {
