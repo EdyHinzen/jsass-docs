@@ -1,7 +1,7 @@
 Functions
 =========
 
-libsass allow registration of custom functions. These functions are equivalent to `@function` functions in the sass
+libsass allow registration of custom functions. These functions are equivalent to ``@function`` functions in the sass
 language. jsass automatically maps methods from any java object to libsass and internally converts java values to
 libsass values and vise versa for you.
 
@@ -24,7 +24,7 @@ Then register the object instance to the options.
 
     options.getFunctionProviders().add(new MyFunctions());
 
-jsass will map the method `MyFunctions::hello(name)` to libsass as `hello($name)`.
+jsass will map the method ``MyFunctions::hello(name)`` to libsass as ``hello($name)``.
 
 What methods are registered?
 ----------------------------
@@ -35,13 +35,13 @@ Non-public and inherited methods are not registered.
 Function signature
 ------------------
 
-The function signature is build from the method name and the parameter annotation `@Name`.
-If the `@Name` annotation is missing, the name will be `argX`.
+The function signature is build from the method name and the parameter annotation ``@Name``.
+If the ``@Name`` annotation is missing, the name will be ``argX``.
 
 Default values
 --------------
 
-With the `@Default...Value` annotations, `@DefaultStringValue` for strings for example, you can set a default value.
+With the ``@Default...Value`` annotations, ``@DefaultStringValue`` for strings for example, you can set a default value.
 The default value is passed by libsass to your method. There is no way / need to use method overloading.
 
 Value types
@@ -150,8 +150,8 @@ libsass to Java
 
 .. note::
 
-    Remind that `SassString implements CharSequence` which is incompatible with `java.lang.String`.
-    If possible it is a good idea to use the `Sass*` type classes, but there is no need.
+    Remind that ``SassString implements CharSequence`` which is incompatible with ``java.lang.String``.
+    If possible it is a good idea to use the ``Sass*`` type classes, but there is no need.
 
 .. note::
 

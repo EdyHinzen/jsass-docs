@@ -2,13 +2,13 @@ Importers
 =========
 
 Importers are an experimental feature of libsass.
-They allow to manipulate the way how `@import` works.
+They allow to manipulate the way how ``@import`` works.
 
 .. warning::
 
     The import source string must be in SCSS syntax. SASS syntax is not supported yet!
 
-In jsass importers must implement the `io.bit3.jsass.importer.Importer` interface.
+In jsass importers must implement the ``io.bit3.jsass.importer.Importer`` interface.
 
 .. literalinclude:: examples/MyImporter.java
    :language: java
@@ -20,12 +20,12 @@ Then register the object instance to the options.
 
     options.getImporters().add(new MyImporter());
 
-Thats all! From now on, each `@import` will be passed through your custom importer.
+Thats all! From now on, each ``@import`` will be passed through your custom importer.
 
 Skip importer
 -------------
 
-If you importer should be skipped, just return `null`.
+If you importer should be skipped, just return ``null``.
 
 .. code-block:: java
    :linenos:
@@ -46,7 +46,7 @@ If you importer should be skipped, just return `null`.
 Skip import
 -----------
 
-Sometimes you may want to omit an `@import` directive. In this case, return an empty list.
+Sometimes you may want to omit an ``@import`` directive. In this case, return an empty list.
 
 .. code-block:: java
    :linenos:
