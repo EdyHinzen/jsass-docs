@@ -67,15 +67,15 @@ Sometimes you may want to omit an `@import` directive. In this case, return an e
 Import a file
 -------------
 
-Importing a file is one of the basic ways to import a source. Fill the path URI with the relative file name
-and the base URI with the absolute base path, leave everything else empty. libsass will search the file in
-the path and import it.
+Importing a file is one of the basic ways to import a source. Fill the ``Import#importUri`` with
+the relative file name and the ``Import#absoluteUri`` with the absolute file path, leave everything
+else empty. libsass will search the file in the path and import it.
 
 .. code-block:: java
 
     Import fileImport = new Import(
             new URI("import.scss"),
-            new File("public/assets").toURI()
+            new File("public/assets/import.scss").toURI()
     );
 
 Import a string
@@ -89,6 +89,6 @@ Importing a string is as simple as importing a file. Just add the string content
 
     Import fileImport = new Import(
             new URI("import.scss"),
-            new File("public/assets").toURI(),
+            new File("public/assets/import.scss").toURI(),
             contents
     );

@@ -14,7 +14,7 @@ public class MyImporter implements Importer {
       return Collections.singletonList(
           new Import(
               new URI("import.scss"),
-              new File("public/assets").toURI()
+              new File("public/assets/import.scss").toURI()
           )
       );
     } catch (URISyntaxException e) {
