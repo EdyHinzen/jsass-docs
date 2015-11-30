@@ -26,4 +26,5 @@ Contents:
    functions
    importers
    license
+   changelog
    internals
