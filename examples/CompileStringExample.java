@@ -25,7 +25,7 @@ public class CompileStringExample {
       out.println(output.getCss());
     } catch (CompilationException e) {
       err.println("Compile failed");
-      e.printStackTrace(err);
+      err.println(e.getErrorText());
     }
   }
 }
