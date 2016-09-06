@@ -32,6 +32,29 @@ What methods are registered?
 All directly declared public methods are registered as libsass functions.
 Non-public and inherited methods are not registered.
 
+Special functions ``@warn``, ``@error``, ``@debug``
+---------------------------------------------------
+
+Libsass allow to overwrite the ``@warn``, ``@error`` and ``@debug`` functions.
+Simply mark the designated method with annotations, like this:
+
+.. code-block:: java
+
+   @WarnFunction
+   public void warn(String message) {
+     logger.warn(message);
+   }
+
+   @ErrorFunction
+   public void error(String message) {
+     logger.error(message);
+   }
+
+   @DebugFunction
+   public void debug(String message) {
+     logger.debug(message);
+   }
+
 Function signature
 ------------------
 
